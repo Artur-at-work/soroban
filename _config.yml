@@ -1,0 +1,20 @@
+title: Soroban School
+description: Learn the Japanese abacus one move at a time.
+remote_theme: just-the-docs/just-the-docs
+url: ""
+baseurl: ""
+
+plugins:
+  - jekyll-remote-theme
+
+color_scheme: light
+search_enabled: true
+heading_anchors: true
+nav_sort: case_insensitive
+
+exclude:
+  - tools
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
