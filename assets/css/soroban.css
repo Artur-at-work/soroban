@@ -1,0 +1,203 @@
+:root {
+  --soroban-ink: #172b2a;
+  --soroban-quiet: #536765;
+  --soroban-line: #b7c8c0;
+  --soroban-paper: #f3f6f1;
+  --soroban-board: #dce8df;
+  --soroban-bead: #d96a42;
+  --soroban-bead-active: #8c3928;
+  --soroban-accent: #1d6860;
+}
+
+.lesson-start {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 1.5rem 0 2rem;
+  color: var(--soroban-quiet);
+}
+
+.soroban-widget {
+  margin: 1.25rem 0 2rem;
+  padding: 1rem;
+  border: 1px solid var(--soroban-line);
+  border-radius: 6px;
+  background: var(--soroban-paper);
+  color: var(--soroban-ink);
+}
+
+.soroban-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 2rem;
+  margin: 0 auto 0.75rem;
+  max-width: 760px;
+}
+
+.soroban-label {
+  margin-right: auto;
+  font-weight: 600;
+}
+
+.soroban-readout {
+  min-width: 4ch;
+  color: var(--soroban-accent);
+  font-size: 1.2rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  text-align: right;
+}
+
+.soroban-clear {
+  padding: 0.35rem 0.7rem;
+  border: 1px solid var(--soroban-line);
+  border-radius: 4px;
+  background: white;
+  color: var(--soroban-ink);
+  cursor: pointer;
+  font: inherit;
+}
+
+.soroban-clear:hover,
+.soroban-clear:focus-visible {
+  border-color: var(--soroban-accent);
+  outline-color: var(--soroban-accent);
+}
+
+.soroban-canvas {
+  max-width: 760px;
+  margin: auto;
+  overflow-x: auto;
+}
+
+.soroban-svg {
+  display: block;
+  width: 100%;
+  min-width: 290px;
+  height: auto;
+  touch-action: manipulation;
+}
+
+.soroban-frame {
+  fill: var(--soroban-board);
+  stroke: var(--soroban-ink);
+  stroke-width: 4;
+}
+
+.soroban-rod {
+  stroke: #718985;
+  stroke-width: 2;
+}
+
+.soroban-beam {
+  stroke: var(--soroban-ink);
+  stroke-width: 8;
+}
+
+.soroban-bead {
+  fill: var(--soroban-bead);
+  stroke: var(--soroban-bead-active);
+  stroke-width: 1.5;
+  cursor: pointer;
+}
+
+.soroban-bead:focus-visible {
+  stroke: #f6d46b;
+  stroke-width: 4;
+  outline: none;
+}
+
+.soroban-unit-dot {
+  fill: var(--soroban-accent);
+}
+
+.soroban-column-label {
+  fill: var(--soroban-quiet);
+  font: 12px sans-serif;
+  text-anchor: middle;
+}
+
+.soroban-help {
+  max-width: 760px;
+  margin: 0.5rem auto 0;
+  color: var(--soroban-quiet);
+  font-size: 0.85rem;
+}
+
+.practice-panel {
+  display: grid;
+  grid-template-columns: auto minmax(9rem, 14rem) auto;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 1.5rem 0;
+  padding: 1rem 0;
+  border-top: 1px solid var(--soroban-line);
+  border-bottom: 1px solid var(--soroban-line);
+}
+
+.practice-panel label {
+  font-weight: 600;
+}
+
+.practice-panel select,
+.practice-panel input {
+  min-height: 2.4rem;
+  padding: 0.35rem 0.5rem;
+  border: 1px solid var(--soroban-line);
+  border-radius: 4px;
+  background: white;
+  color: var(--soroban-ink);
+  font: inherit;
+}
+
+.practice-panel .drill-problem,
+.practice-panel form,
+.practice-panel [data-feedback],
+.practice-panel .drill-score {
+  grid-column: 1 / -1;
+}
+
+.practice-panel .drill-problem {
+  margin: 0.5rem 0;
+  color: var(--soroban-accent);
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.practice-panel form {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.practice-panel [data-feedback],
+.practice-panel .drill-score {
+  min-height: 1.5rem;
+  margin: 0;
+}
+
+@media (max-width: 520px) {
+  .practice-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .practice-panel .drill-problem,
+  .practice-panel form,
+  .practice-panel [data-feedback],
+  .practice-panel .drill-score {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .soroban-widget {
+    padding: 0.7rem;
+  }
+
+  .soroban-toolbar {
+    gap: 0.5rem;
+  }
+}

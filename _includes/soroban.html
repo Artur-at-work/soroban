@@ -1,0 +1,10 @@
+<div class="soroban-widget" data-rods="{{ include.rods | default: 5 }}" data-value="{{ include.value | default: 0 }}">
+  <div class="soroban-toolbar">
+    <span class="soroban-label">{{ include.label | default: "Practice board" }}</span>
+    <output class="soroban-readout" aria-live="polite">{{ include.value | default: 0 }}</output>
+    <button class="soroban-clear" type="button" title="Clear board" aria-label="Clear board">Clear</button>
+  </div>
+  <div class="soroban-canvas" role="group" aria-label="Interactive soroban">
+    <noscript>Enable JavaScript to use the interactive soroban.</noscript>
+  </div>
+</div>
