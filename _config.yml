@@ -2,7 +2,7 @@ title: Soroban School
 description: Learn the Japanese abacus one move at a time.
 remote_theme: just-the-docs/just-the-docs
 url: ""
-baseurl: ""
+baseurl: "/soroban"
 
 plugins:
   - jekyll-remote-theme
