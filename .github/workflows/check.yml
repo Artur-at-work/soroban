@@ -1,0 +1,19 @@
+name: Check lesson assets
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - run: pip install -r tools/requirements.txt
+      - run: python -m unittest discover -s tools -p 'test_*.py'
+      - run: python tools/gen_soroban.py
+      - run: git diff --exit-code -- assets/img
+      - run: test -z "$(git status --porcelain --untracked-files=all -- assets/img)"
