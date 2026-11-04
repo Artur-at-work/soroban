@@ -54,7 +54,7 @@ def render_diagram(spec: dict) -> str:
         earth = digit % 5
         for index in range(4):
             active = index < earth
-            y = beam_y + 18 + index * 14 if active else 166 + (index - earth) * 14
+            y = beam_y + 18 + index * 14 if active else 166 + index * 14
             parts.append(_bead(x, y, 8, f"Rod {rods - rod} lower bead {index + 1}"))
         if rod == rods - 1:
             parts.append(f'<circle cx="{x:g}" cy="238" r="3" fill="{COLORS["active"]}"/>')

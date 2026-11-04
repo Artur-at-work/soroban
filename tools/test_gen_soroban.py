@@ -18,6 +18,14 @@ class RenderDiagramTests(unittest.TestCase):
         labels = re.findall(r'text-anchor="middle">([^<]+)</text>', svg)
         self.assertEqual(labels, ["1000", "100", "10", "ones"])
 
+    def test_lower_beads_never_overlap(self):
+        for value in range(10):
+            svg = render_diagram({"rods": 1, "value": value})
+            ys = sorted(float(y) for y in re.findall(r'cy="([\d.]+)" r="8"', svg))
+            self.assertEqual(len(ys), 4)
+            gaps = [b - a for a, b in zip(ys, ys[1:])]
+            self.assertGreaterEqual(min(gaps), 14, f"value {value}: {ys}")
+
     def test_rejects_number_that_does_not_fit(self):
         with self.assertRaises(ValueError):
             render_diagram({"rods": 2, "value": 100})

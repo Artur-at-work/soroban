@@ -86,7 +86,7 @@
 
       for (let index = 0; index < 4; index += 1) {
         const active = index < digit.earth;
-        const y = active ? beamY + 18 + index * 14 : 166 + (index - digit.earth) * 14;
+        const y = active ? beamY + 18 + index * 14 : 166 + index * 14;
         svg.appendChild(makeBead(rod, "earth", index, x, y, active, `Rod ${rods - rod}, lower bead ${index + 1}, ${active ? "active" : "inactive"}`));
       }
 
