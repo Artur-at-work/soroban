@@ -59,7 +59,7 @@ def render_diagram(spec: dict) -> str:
         if rod == rods - 1:
             parts.append(f'<circle cx="{x:g}" cy="238" r="3" fill="{COLORS["active"]}"/>')
         place = rods - rod - 1
-        place_label = "ones" if place == 0 else "10" + "0" * place
+        place_label = "ones" if place == 0 else "1" + "0" * place
         parts.append(f'<text x="{x:g}" y="270" fill="{COLORS["ink"]}" font-family="sans-serif" font-size="12" text-anchor="middle">{place_label}</text>')
 
     parts.append("</svg>")

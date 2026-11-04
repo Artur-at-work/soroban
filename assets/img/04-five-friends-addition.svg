@@ -9,7 +9,7 @@
 <circle cx="119" cy="180" r="8" fill="#d96a42" stroke="#8c3928" stroke-width="1.5"><title>Rod 2 lower bead 2</title></circle>
 <circle cx="119" cy="194" r="8" fill="#d96a42" stroke="#8c3928" stroke-width="1.5"><title>Rod 2 lower bead 3</title></circle>
 <circle cx="119" cy="208" r="8" fill="#d96a42" stroke="#8c3928" stroke-width="1.5"><title>Rod 2 lower bead 4</title></circle>
-<text x="119" y="270" fill="#172b2a" font-family="sans-serif" font-size="12" text-anchor="middle">100</text>
+<text x="119" y="270" fill="#172b2a" font-family="sans-serif" font-size="12" text-anchor="middle">10</text>
 <rect x="157" y="15" width="48" height="210" rx="20" fill="#f2d879" opacity="0.55"/>
 <line x1="181" y1="20" x2="181" y2="220" stroke="#718985" stroke-width="2"/>
 <circle cx="181" cy="97" r="9" fill="#d96a42" stroke="#8c3928" stroke-width="1.5"><title>Rod 1 upper bead</title></circle>

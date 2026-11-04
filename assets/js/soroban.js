@@ -94,7 +94,7 @@
         svg.appendChild(svgElement("circle", { cx: x, cy: 238, r: 3, class: "soroban-unit-dot" }));
       }
       const place = rods - rod - 1;
-      svg.appendChild(svgElement("text", { x, y: 270, class: "soroban-column-label" })).textContent = place === 0 ? "ones" : `10${"0".repeat(place)}`;
+      svg.appendChild(svgElement("text", { x, y: 270, class: "soroban-column-label" })).textContent = place === 0 ? "ones" : `1${"0".repeat(place)}`;
     }
 
     svg.setAttribute("viewBox", `0 0 ${width} 280`);

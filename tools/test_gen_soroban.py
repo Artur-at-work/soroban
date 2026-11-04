@@ -1,3 +1,4 @@
+import re
 import unittest
 
 from gen_soroban import render_diagram
@@ -11,6 +12,11 @@ class RenderDiagramTests(unittest.TestCase):
         self.assertIn("Two hundred four", first)
         self.assertIn("number 204", first)
         self.assertEqual(first.count("<line"), 4)
+
+    def test_labels_rods_by_place_value(self):
+        svg = render_diagram({"rods": 4, "value": 0})
+        labels = re.findall(r'text-anchor="middle">([^<]+)</text>', svg)
+        self.assertEqual(labels, ["1000", "100", "10", "ones"])
 
     def test_rejects_number_that_does_not_fit(self):
         with self.assertRaises(ValueError):
